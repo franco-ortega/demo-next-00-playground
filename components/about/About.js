@@ -7,7 +7,7 @@ const About = () => {
   console.log({ data });
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/aboutRoute`)
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/about`)
     .then(res => res.json())
     .then(res => setData(res))
   }, []);
@@ -15,10 +15,10 @@ const About = () => {
 
   return (
     <Layout>
-      <section className={styles.About}>
-        <h2>About Page</h2>
-        <p>{data.about}</p>
-      </section>
+      <div className={styles.About}>
+        <h1>About Page</h1>
+        <p>{data.content}</p>
+      </div>
     </Layout>
   );
 };
