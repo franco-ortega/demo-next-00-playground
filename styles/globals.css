@@ -13,3 +13,7 @@
 * {
   box-sizing: border-box;
 }
+
+:root {
+ --general-padding: .25rem;
+}

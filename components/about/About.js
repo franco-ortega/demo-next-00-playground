@@ -12,7 +12,6 @@ const About = () => {
     .then(res => setData(res))
   }, []);
 
-
   return (
     <Layout>
       <div className={styles.About}>
