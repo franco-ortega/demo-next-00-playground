@@ -1,0 +1,5 @@
+.Stuff {
+  background-color: lightpink;
+
+  padding: var(--general-padding);
+}
