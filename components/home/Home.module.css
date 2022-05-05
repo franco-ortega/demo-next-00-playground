@@ -1,0 +1,5 @@
+.Home {
+  background-color: lightblue;
+
+  padding: var(--general-padding);
+}
