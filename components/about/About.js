@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Layout from '../layout/Layout';
+import Loading from '../loading/Loading';
 import styles from './About.module.css';
 
 const About = () => {
@@ -14,10 +15,15 @@ const About = () => {
 
   return (
     <Layout>
-      <div className={styles.About}>
-        <h1>About Page</h1>
-        <p>{data.content}</p>
-      </div>
+      {data.length === 0
+      ? 
+        <Loading />
+      :
+        <div className={styles.About}>
+          <h1>About Page</h1>
+          <p>{data.content}</p>
+        </div>
+      }
     </Layout>
   );
 };
