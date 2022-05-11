@@ -5,7 +5,6 @@ import styles from './Home.module.css';
 
 const Home = () => {
   const [data, setData] = useState([]);
-  console.log({ data });
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/home`)

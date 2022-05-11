@@ -1,7 +1,17 @@
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import styles from './Nav.module.css';
 
 const Nav = () => {
+  const links = ['one', 'two', 'three'];
+  const currentLink = links[Math.floor(Math.random() * links.length)];
+  const [activeLink, setActiveLink] = useState('');
+
+  useEffect(() => {
+    setActiveLink(currentLink)
+  }, [currentLink]);
+
+
   return (
     <nav className={styles.Nav}>
       <h2>Nav Bar</h2>
@@ -19,6 +29,11 @@ const Nav = () => {
         <li>
           <Link href='/stuff'>
             <a>Stuff</a>
+          </Link>
+        </li>
+        <li>
+          <Link href={`/event/${activeLink}`}>
+            <a>{activeLink}</a>
           </Link>
         </li>
       </ul>
