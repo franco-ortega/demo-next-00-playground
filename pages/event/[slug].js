@@ -8,9 +8,10 @@ const Event = () => {
     return(
         <Layout>
             <h2>Event Page</h2>
-            <p>{slug}</p>
+            <p>{slug && slug.charAt(0).toUpperCase() + slug.substring(1)}</p>
         </Layout>
     );
 };
 
 export default Event;
+ 

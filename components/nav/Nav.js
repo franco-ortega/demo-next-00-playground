@@ -3,14 +3,11 @@ import { useState, useEffect } from 'react';
 import styles from './Nav.module.css';
 
 const Nav = () => {
-  const links = ['one', 'two', 'three'];
+  const links = ['One', 'Two', 'Three'];
   const currentLink = links[Math.floor(Math.random() * links.length)];
   const [activeLink, setActiveLink] = useState('');
 
-  useEffect(() => {
-    setActiveLink(currentLink)
-  }, [currentLink]);
-
+  useEffect(() => setActiveLink(currentLink), [currentLink]);
 
   return (
     <nav className={styles.Nav}>
@@ -32,7 +29,7 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href={`/event/${activeLink}`}>
+          <Link href={`/event/${activeLink.toLowerCase()}`}>
             <a>{activeLink}</a>
           </Link>
         </li>
