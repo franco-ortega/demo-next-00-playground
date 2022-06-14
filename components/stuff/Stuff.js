@@ -4,7 +4,7 @@ import styles from "./Stuff.module.css";
 
 const Stuff = () => {
   const [data, setData] = useState([]);
-  console.log({ data });
+  // console.log({ data });
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/stuff`)
