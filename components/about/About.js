@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import Layout from '../layout/Layout';
-import Loading from '../loading/Loading';
-import styles from './About.module.css';
+import { useEffect, useState } from "react";
+
+import Loading from "../loading/Loading";
+import styles from "./About.module.css";
 
 const About = () => {
   const [data, setData] = useState([]);
@@ -9,22 +9,17 @@ const About = () => {
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/about`)
-    .then(res => res.json())
-    .then(res => setData(res))
+      .then((res) => res.json())
+      .then((res) => setData(res));
   }, []);
 
-  return (
-    <Layout>
-      {data.length === 0
-      ? 
-        <Loading />
-      :
-        <div className={styles.About}>
-          <h1>About Page</h1>
-          <p>{data.content}</p>
-        </div>
-      }
-    </Layout>
+  return data.length === 0 ? (
+    <Loading />
+  ) : (
+    <div className={styles.About}>
+      <h1>About Page</h1>
+      <p>{data.content}</p>
+    </div>
   );
 };
 
