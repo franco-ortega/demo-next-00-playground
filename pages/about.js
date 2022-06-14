@@ -6,8 +6,7 @@ const AboutPage = ({ data }) => {
 };
 
 export async function getStaticProps() {
-  const res = await getData('about');
-  const data = res.content ? res : { content: 'No content found' };
+  const data = await getData('about');
 
   return {
     props: {
