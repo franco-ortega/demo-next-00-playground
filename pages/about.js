@@ -1,9 +1,18 @@
 import About from '../components/about/About';
+import { getData } from '../helpers/getData';
 
-const about = () => {
-  return (
-    <About />
-  );
+const AboutPage = ({ data }) => {
+  return <About data={data} />;
 };
 
-export default about;
+export async function getStaticProps() {
+  const data = await getData('about');
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+export default AboutPage;

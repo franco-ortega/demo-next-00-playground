@@ -1,0 +1,5 @@
+.slug {
+    background-color: lightgrey;
+  
+    padding: var(--general-padding);
+  }
