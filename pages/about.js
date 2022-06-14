@@ -1,13 +1,14 @@
 import About from "../components/about/About";
+import { getData } from "../helpers/getData";
 
-const about = ({ data }) => {
+const path = "about";
+
+const AboutPage = ({ data }) => {
   return <About data={data} />;
 };
 
 export async function getStaticProps() {
-  const data = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/about`
-  ).then((res) => res.json());
+  const data = await getData(path);
 
   return {
     props: {
@@ -17,4 +18,4 @@ export async function getStaticProps() {
   };
 }
 
-export default about;
+export default AboutPage;
