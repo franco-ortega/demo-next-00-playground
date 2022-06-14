@@ -1,12 +1,12 @@
-import styles from "./About.module.css";
+import styles from './About.module.css';
 
-function About({ data }) {
+const About = ({ data }) => {
   return (
     <div className={styles.About}>
       <h1>About Page</h1>
-      {data.content ? <p>{data.content}</p> : <p>No content found</p>}
+      <p>{data.content}</p>
     </div>
   );
-}
+};
 
 export default About;
