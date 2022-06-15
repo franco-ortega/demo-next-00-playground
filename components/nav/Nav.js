@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { useColor } from '../../hooks/useColor';
 import styles from './Nav.module.css';
 
 const Nav = () => {
@@ -9,11 +10,7 @@ const Nav = () => {
 
   useEffect(() => setActiveLink(currentLink), [currentLink]);
 
-  const colors = ['Red', 'Green', 'Blue', 'Yellow', 'Orange', 'Pink', 'Brown'];
-  const currentColor = colors[Math.floor(Math.random() * colors.length)];
-
-  const [activeColor, setActiveColor] = useState('');
-  useEffect(() => setActiveColor(currentColor), [currentColor]);
+  const { activeColor } = useColor();
 
   return (
     <nav className={styles.Nav}>
