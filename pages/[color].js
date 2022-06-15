@@ -1,6 +1,5 @@
 import Color from '../components/color/Color';
-
-const colors = ['Red', 'Green', 'Blue', 'Yellow', 'Orange', 'Pink', 'Brown'];
+import colors from '../data/colors';
 
 const ColorPage = ({ currentColor }) => {
   return <Color currentColor={currentColor} />;
@@ -19,7 +18,6 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const activeColor = await context.params;
-  console.log(activeColor);
 
   return {
     props: {
