@@ -1,15 +1,10 @@
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import { useColor } from '../../hooks/useColor';
+import { useLink } from '../../hooks/useLink';
 import styles from './Nav.module.css';
 
 const Nav = () => {
-  const links = ['One', 'Two', 'Three'];
-  const currentLink = links[Math.floor(Math.random() * links.length)];
-  const [activeLink, setActiveLink] = useState('');
-
-  useEffect(() => setActiveLink(currentLink), [currentLink]);
-
+  const { activeLink } = useLink();
   const { activeColor } = useColor();
 
   return (
