@@ -1,52 +1,29 @@
-import styles from './slug.module.css';
+import Event from '../../components/event/Event'
+import links from '../../data/links';
 
-const Event = ({ currentSlug }) => {
-
-  return (
-    <div className={styles.SlugStyles}>
-      <h1>Event Page</h1>
-      <p>
-        This is the{' '}
-        {currentSlug.slug &&
-          currentSlug.slug.charAt(0).toUpperCase() + currentSlug.slug.substring(1)}{' '}
-        page of Event.
-      </p>
-    </div>
-  );
+const EventPage = ({ currentSlug }) => {
+  return <Event currentSlug={currentSlug} />
 };
 
 export async function getStaticPaths() {
   return {
     fallback: false,
-    paths: [
-      {
-        params: {
-          slug: 'one',
-        },
+    paths: links.map((link) => ({
+      params: {
+        slug: link.toLowerCase(),
       },
-      {
-        params: {
-          slug: 'two',
-        },
-      },
-      {
-        params: {
-          slug: 'three',
-        },
-      },
-    ],
+    })),
   };
 }
 
 export async function getStaticProps(context) {
   const activeLink = await context.params;
-  console.log(activeLink);
 
   return {
     props: {
-      currentSlug: activeLink
+      currentSlug: activeLink,
     },
   };
 }
 
-export default Event;
+export default EventPage;
