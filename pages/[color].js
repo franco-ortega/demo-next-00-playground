@@ -1,58 +1,23 @@
 import Color from '../components/color/Color';
 
+const colors = ['Red', 'Green', 'Blue', 'Yellow', 'Orange', 'Pink', 'Brown'];
+
 const ColorPage = ({ currentColor }) => {
   return <Color currentColor={currentColor} />;
 };
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   return {
     fallback: false,
-    paths: [
-      {
-        params: {
-          color: 'red',
-        },
+    paths: colors.map((color) => ({
+      params: {
+        color: color.toLowerCase(),
       },
-      {
-        params: {
-          color: 'green',
-        },
-      },
-      {
-        params: {
-          color: 'blue',
-        },
-      },
-      {
-        params: {
-          color: 'yellow',
-        },
-      },
-      {
-        params: {
-          color: 'orange',
-        },
-      },
-      {
-        params: {
-          color: 'pink',
-        },
-      },
-      {
-        params: {
-          color: 'brown',
-        },
-      },
-      {
-        params: {
-          color: 'blue',
-        },
-      },
-    ],
+    })),
   };
-}
+};
 
-export async function getStaticProps(context) {
+export const getStaticProps = async (context) => {
   const activeColor = await context.params;
   console.log(activeColor);
 
@@ -61,6 +26,6 @@ export async function getStaticProps(context) {
       currentColor: activeColor,
     },
   };
-}
+};
 
 export default ColorPage;
