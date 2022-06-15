@@ -1,9 +1,9 @@
-import styles from './slug.module.css';
+import styles from './Event.module.css';
 import links from '../../data/links';
 
 const Event = ({ currentSlug }) => {
   return (
-    <div className={styles.SlugStyles}>
+    <div className={styles.Event}>
       <h1>Event Page</h1>
       <p>
         This is the{' '}
