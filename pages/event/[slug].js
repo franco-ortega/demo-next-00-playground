@@ -1,19 +1,8 @@
-import styles from './Event.module.css';
+import Event from '../../components/event/Event'
 import links from '../../data/links';
 
-const Event = ({ currentSlug }) => {
-  return (
-    <div className={styles.Event}>
-      <h1>Event Page</h1>
-      <p>
-        This is the{' '}
-        {currentSlug.slug &&
-          currentSlug.slug.charAt(0).toUpperCase() +
-            currentSlug.slug.substring(1)}{' '}
-        page of Event.
-      </p>
-    </div>
-  );
+const EventPage = ({ currentSlug }) => {
+  return <Event currentSlug={currentSlug} />
 };
 
 export async function getStaticPaths() {
@@ -37,4 +26,4 @@ export async function getStaticProps(context) {
   };
 }
 
-export default Event;
+export default EventPage;

@@ -27,13 +27,13 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href={`/event/${activeLink.toLowerCase()}`}>
-            <a>{activeLink}</a>
+          <Link href={`/${activeColor.toLowerCase()}`}>
+            <a>{activeColor}</a>
           </Link>
         </li>
         <li>
-          <Link href={`/${activeColor.toLowerCase()}`}>
-            <a>{activeColor}</a>
+          <Link href={`/event/${activeLink.toLowerCase()}`}>
+            <a>{activeLink}</a>
           </Link>
         </li>
       </ul>
