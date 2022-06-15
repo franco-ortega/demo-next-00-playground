@@ -9,28 +9,39 @@ const Nav = () => {
 
   useEffect(() => setActiveLink(currentLink), [currentLink]);
 
+  const colors = ['Red', 'Green', 'Blue', 'Yellow', 'Orange', 'Pink', 'Brown'];
+  const currentColor = colors[Math.floor(Math.random() * colors.length)];
+
+  const [activeColor, setActiveColor] = useState('');
+  useEffect(() => setActiveColor(currentColor), [currentColor]);
+
   return (
     <nav className={styles.Nav}>
       <h2>Nav Bar</h2>
       <ul>
         <li>
-          <Link href='/'>
+          <Link href="/">
             <a>Home</a>
           </Link>
         </li>
         <li>
-          <Link href='/about'>
+          <Link href="/about">
             <a>About</a>
           </Link>
         </li>
         <li>
-          <Link href='/stuff'>
+          <Link href="/stuff">
             <a>Stuff</a>
           </Link>
         </li>
         <li>
           <Link href={`/event/${activeLink.toLowerCase()}`}>
             <a>{activeLink}</a>
+          </Link>
+        </li>
+        <li>
+          <Link href={`/${activeColor.toLowerCase()}`}>
+            <a>{activeColor}</a>
           </Link>
         </li>
       </ul>

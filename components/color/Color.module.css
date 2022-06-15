@@ -1,0 +1,5 @@
+.Color {
+    background-color: white;
+  
+    padding: var(--general-padding);
+  }
