@@ -1,21 +1,14 @@
-.Nav,
-.Nav ul {
-  display: flex;
-}
-
 .Nav {
   background-color: lightgreen;
-
   padding: var(--general-padding);
-
-  justify-content: space-between;
 }
 
 .Nav ul {
-  list-style-type: none;
-
-  padding: 0 .5rem;
-
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-evenly;
+  padding: 0.5rem;
+  list-style-type: none;
+  font-size: 1.25rem;
 }
