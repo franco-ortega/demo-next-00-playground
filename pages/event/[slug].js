@@ -1,8 +1,8 @@
-import Event from '../../components/event/Event'
+import Event from '../../components/event/Event';
 import links from '../../data/links';
 
 const EventPage = ({ currentSlug }) => {
-  return <Event currentSlug={currentSlug} />
+  return <Event currentSlug={currentSlug} />;
 };
 
 export async function getStaticPaths() {
@@ -10,7 +10,7 @@ export async function getStaticPaths() {
     fallback: false,
     paths: links.map((link) => ({
       params: {
-        slug: link.toLowerCase(),
+        slug: link,
       },
     })),
   };
