@@ -33,8 +33,8 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href={`/event/${activeLink.toLowerCase()}`}>
-            <a>{activeLink}</a>
+          <Link href={`/event/${activeLink}`}>
+            <a>{capitalizeFirstLetter(activeLink)}</a>
           </Link>
         </li>
       </ul>

@@ -1,3 +1,3 @@
 export const capitalizeFirstLetter = (word) => {
-    return word.charAt(0).toUpperCase() + word.substring(1)
+  return word.charAt(0).toUpperCase() + word.substring(1);
 };
