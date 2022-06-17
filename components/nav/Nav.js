@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { capitalizeFirstLetter } from '../../helpers/capitalizeFirstLetter';
 import { useColor } from '../../hooks/useColor';
-import { useLink } from '../../hooks/useLink';
+import { useEvent } from '../../hooks/useEvent';
 import styles from './Nav.module.css';
 
 const Nav = () => {
-  const { activeLink } = useLink();
+  const { activeEvent } = useEvent();
   const { activeColor } = useColor();
 
   return (
@@ -32,8 +32,8 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href={`/event/${activeLink}`}>
-            <a>{capitalizeFirstLetter(activeLink)}</a>
+          <Link href={`/event/${activeEvent}`}>
+            <a>{capitalizeFirstLetter(activeEvent)}</a>
           </Link>
         </li>
       </ul>
