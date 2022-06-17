@@ -1,27 +1,25 @@
 import Event from '../../components/event/Event';
-import links from '../../data/links';
+import events from '../../data/events';
 
-const EventPage = ({ currentSlug }) => {
-  return <Event currentSlug={currentSlug} />;
+const EventPage = ({ activeEvent }) => {
+  return <Event event={activeEvent.event} />;
 };
 
 export async function getStaticPaths() {
   return {
     fallback: false,
-    paths: links.map((link) => ({
+    paths: events.map((event) => ({
       params: {
-        slug: link,
+        event: event,
       },
     })),
   };
 }
 
 export async function getStaticProps(context) {
-  const activeLink = await context.params;
-
   return {
     props: {
-      currentSlug: activeLink,
+      activeEvent: await context.params,
     },
   };
 }
