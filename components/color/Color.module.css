@@ -1,5 +1,5 @@
 .Color {
-    background-color: white;
-  
-    padding: var(--general-padding);
-  }
+  background-color: white;
+  padding: var(--general-padding);
+  height: 50rem;
+}
