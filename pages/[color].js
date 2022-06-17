@@ -10,7 +10,7 @@ export const getStaticPaths = async () => {
     fallback: false,
     paths: colors.map((color) => ({
       params: {
-        color: color.toLowerCase(),
+        color: color,
       },
     })),
   };

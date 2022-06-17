@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { capitalizeFirstLetter } from '../../helpers/capitalizeFirstLetter';
 import { useColor } from '../../hooks/useColor';
 import { useLink } from '../../hooks/useLink';
 import styles from './Nav.module.css';
@@ -27,8 +28,8 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href={`/${activeColor.toLowerCase()}`}>
-            <a>{activeColor}</a>
+          <Link href={`/${activeColor}`}>
+            <a>{capitalizeFirstLetter(activeColor)}</a>
           </Link>
         </li>
         <li>
