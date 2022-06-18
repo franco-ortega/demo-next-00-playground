@@ -1,8 +1,8 @@
 import Event from '../../components/event/Event';
 import events from '../../data/events';
 
-const EventPage = ({ activeEvent }) => {
-  return <Event event={activeEvent.event} />;
+const EventPage = ({ slug }) => {
+  return <Event event={slug.event} />;
 };
 
 export async function getStaticPaths() {
@@ -10,7 +10,7 @@ export async function getStaticPaths() {
     fallback: false,
     paths: events.map((event) => ({
       params: {
-        event: event,
+        event,
       },
     })),
   };
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   return {
     props: {
-      activeEvent: await context.params,
+      slug: await context.params,
     },
   };
 }
