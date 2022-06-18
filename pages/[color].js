@@ -1,8 +1,8 @@
 import Color from '../components/color/Color';
 import colors from '../data/colors';
 
-const ColorPage = ({ activeColor }) => {
-  return <Color color={activeColor.color} />;
+const ColorPage = ({ slug }) => {
+  return <Color color={slug.color} />;
 };
 
 export const getStaticPaths = async () => {
@@ -19,7 +19,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   return {
     props: {
-      activeColor: await context.params,
+      slug: await context.params,
     },
   };
 };
